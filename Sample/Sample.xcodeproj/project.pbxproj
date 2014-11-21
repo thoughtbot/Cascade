@@ -11,7 +11,8 @@
 		1F46329F62C5DB39D1C6DAC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CA6D95218A5D0339C8B3B /* AppDelegate.swift */; };
 		3CCD569E5D33EAC01CA4C48E /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 526DC1A8C80B7295BE71CA48 /* LaunchScreen.xib */; };
 		D33CD7774513D9469BC73F1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F623DD5160E0E64F77924D7 /* Images.xcassets */; };
-		F86BBDF21A1F989F0080265A /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86BBDF11A1F989F0080265A /* Masonry.framework */; };
+		F822B5611A2E692500B4CAA9 /* Cascade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F891E5181A2E6889006A302B /* Cascade.framework */; };
+		F86BBDF41A1F997D0080265A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BBDF31A1F997D0080265A /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +22,8 @@
 		665C3B639621458680370399 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		71B15E276422F1001819B1BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4DC2ECC67B097092D94AB62 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F86BBDF11A1F989F0080265A /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../build/Debug-iphoneos/Masonry.framework"; sourceTree = "<group>"; };
+		F86BBDF31A1F997D0080265A /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		F891E5181A2E6889006A302B /* Cascade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Cascade.framework; path = "/Users/gordon/Library/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos/Cascade.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F86BBDF21A1F989F0080265A /* Masonry.framework in Frameworks */,
+				F822B5611A2E692500B4CAA9 /* Cascade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				5D46E0DECB520021D5461F7C /* Sample */,
-				BFDE43C130E57F2B0E6C22FB /* Frameworks */,
 				DFB99671BD88502EDC789C37 /* Products */,
+				F8482C411A2E61C3008916A0 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5CA6D95218A5D0339C8B3B /* AppDelegate.swift */,
+				F86BBDF31A1F997D0080265A /* CollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,14 +127,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BFDE43C130E57F2B0E6C22FB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F86BBDF11A1F989F0080265A /* Masonry.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C1755E042A15E43FCE408DAE /* Protocols */ = {
@@ -154,6 +149,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F8482C411A2E61C3008916A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F891E5181A2E6889006A302B /* Cascade.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +186,7 @@
 		B001E0E7C03DF64D51C6BE3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MAS;
+				CLASSPREFIX = CAS;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = thoughtbot;
 			};
@@ -239,6 +242,7 @@
 			files = (
 				1F46329F62C5DB39D1C6DAC4 /* AppDelegate.swift in Sources */,
 				065D16558B3ED02CA4BBFB2C /* Main.storyboard in Sources */,
+				F86BBDF41A1F997D0080265A /* CollectionViewController.swift in Sources */,
 				3CCD569E5D33EAC01CA4C48E /* LaunchScreen.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,11 +254,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gordon/Code/thoughtbot/SwiftMasonry/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -270,6 +275,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -277,11 +283,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gordon/Code/thoughtbot/SwiftMasonry/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -299,6 +306,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
