@@ -11,9 +11,41 @@
 		1F46329F62C5DB39D1C6DAC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CA6D95218A5D0339C8B3B /* AppDelegate.swift */; };
 		3CCD569E5D33EAC01CA4C48E /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 526DC1A8C80B7295BE71CA48 /* LaunchScreen.xib */; };
 		D33CD7774513D9469BC73F1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F623DD5160E0E64F77924D7 /* Images.xcassets */; };
-		F822B5611A2E692500B4CAA9 /* Cascade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F891E5181A2E6889006A302B /* Cascade.framework */; };
+		F80310AB1A2F88F800C2692B /* Cascade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80310AA1A2F88F300C2692B /* Cascade.framework */; };
+		F80310AC1A2F88F800C2692B /* Cascade.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F80310AA1A2F88F300C2692B /* Cascade.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F86BBDF41A1F997D0080265A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BBDF31A1F997D0080265A /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F80310A91A2F88F300C2692B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F80310A51A2F88F300C2692B /* Cascade.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8FB72591A1F9654004265D5;
+			remoteInfo = Cascade;
+		};
+		F80310AD1A2F88F800C2692B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F80310A51A2F88F300C2692B /* Cascade.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8FB72581A1F9654004265D5;
+			remoteInfo = Cascade;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F87F42B01A2E6DAB004309F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F80310AC1A2F88F800C2692B /* Cascade.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F623DD5160E0E64F77924D7 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -22,8 +54,8 @@
 		665C3B639621458680370399 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		71B15E276422F1001819B1BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4DC2ECC67B097092D94AB62 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80310A51A2F88F300C2692B /* Cascade.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cascade.xcodeproj; path = ../Cascade.xcodeproj; sourceTree = "<group>"; };
 		F86BBDF31A1F997D0080265A /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		F891E5181A2E6889006A302B /* Cascade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Cascade.framework; path = "/Users/gordon/Library/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos/Cascade.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F822B5611A2E692500B4CAA9 /* Cascade.framework in Frameworks */,
+				F80310AB1A2F88F800C2692B /* Cascade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,10 +183,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F80310A61A2F88F300C2692B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F80310AA1A2F88F300C2692B /* Cascade.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F8482C411A2E61C3008916A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F891E5181A2E6889006A302B /* Cascade.framework */,
+				F80310A51A2F88F300C2692B /* Cascade.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,10 +210,12 @@
 				4CBBDC1A99B27B2A1D754F1F /* Frameworks */,
 				CCD5562AA17C705DC32C35E7 /* Resources */,
 				7B66BFD0779860AAC30F336D /* Warn for TODO and FIXME comments */,
+				F87F42B01A2E6DAB004309F8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F80310AE1A2F88F800C2692B /* PBXTargetDependency */,
 			);
 			name = Sample;
 			productName = Sample;
@@ -200,12 +242,28 @@
 			mainGroup = 3649E3C95192F4B8D8BEE670;
 			productRefGroup = DFB99671BD88502EDC789C37 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F80310A61A2F88F300C2692B /* Products */;
+					ProjectRef = F80310A51A2F88F300C2692B /* Cascade.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E05310DB83FD907005E670C5 /* Sample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F80310AA1A2F88F300C2692B /* Cascade.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cascade.framework;
+			remoteRef = F80310A91A2F88F300C2692B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CCD5562AA17C705DC32C35E7 /* Resources */ = {
@@ -249,14 +307,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F80310AE1A2F88F800C2692B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cascade;
+			targetProxy = F80310AD1A2F88F800C2692B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		0E076DEFA4C74DB7A90424DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos",
@@ -273,6 +341,7 @@
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -283,9 +352,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos",
@@ -304,6 +375,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
