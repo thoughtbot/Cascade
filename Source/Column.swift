@@ -61,6 +61,10 @@ func tallestColumn(columns: [Column]) -> Column? {
     return sorted(columns) { $0.bottomEdge > $1.bottomEdge }.first
 }
 
+func addItemToColumn(column: Column)(indexPath: NSIndexPath)(size: CGSize) -> Column {
+    return column.addItemWithSize(size, atIndexPath: indexPath)
+}
+
 func replaceColumn(var columns: [Column])(oldColumn: Column)(newColumn: Column) -> [Column] {
     columns.removeAtIndex <^> find(columns, oldColumn)
     return columns + [newColumn]

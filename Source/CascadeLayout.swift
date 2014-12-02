@@ -38,15 +38,12 @@ public class CascadeLayout: UICollectionViewFlowLayout {
 
         return reduce(0..<numberOfItems, columns) { columns, itemIndex in
             let indexPath = NSIndexPath(forItem: itemIndex, inSection: index)
+            let itemSize = self.itemSizeAtIndexPath(indexPath)
             let oldColumn = shortestColumn(columns)
-            let newColumn = self.addItemToColumn <^> oldColumn <*> indexPath
+            let newColumn = addItemToColumn <^> oldColumn <*> indexPath <*> itemSize
             return replaceColumn(columns) <^> oldColumn <*> newColumn ?? columns
-        }
-    }
 
-    func addItemToColumn(column: Column)(indexPath: NSIndexPath) -> Column {
-        let itemSize = itemSizeAtIndexPath(indexPath)
-        return column.addItemWithSize(itemSize, atIndexPath: indexPath)
+        }
     }
 
     func columnCountForSectionAtIndex(index: Int) -> Int {
