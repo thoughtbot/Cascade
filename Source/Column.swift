@@ -34,7 +34,7 @@ extension Column {
         let aspectRatio = itemSize.height / itemSize.width
         let itemRect = CGRect(x: frame.minX,
             y: bottomEdge,
-            width: width,
+            width: floor(width),
             height: floor(width * aspectRatio))
 
         let itemAttributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
