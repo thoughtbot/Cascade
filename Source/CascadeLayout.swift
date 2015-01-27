@@ -1,4 +1,5 @@
 import UIKit.UICollectionViewFlowLayout
+import Runes
 
 public class CascadeLayout: UICollectionViewFlowLayout {
     public var delegate: CascadeLayoutDelegate?
@@ -41,7 +42,7 @@ public class CascadeLayout: UICollectionViewFlowLayout {
             let itemSize = self.itemSizeAtIndexPath(indexPath)
             let oldColumn = shortestColumn(columns)
             let newColumn = addItemToColumn <^> oldColumn <*> indexPath <*> itemSize
-            return replaceColumn(columns) <^> oldColumn <*> newColumn ?? columns
+            return (replaceColumn(columns) <^> oldColumn <*> newColumn) ?? columns
 
         }
     }

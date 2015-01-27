@@ -1,6 +1,7 @@
 import CoreGraphics.CGGeometry
 import UIKit.UICollectionViewLayout
 import Foundation.NSIndexPath
+import Runes
 
 struct Column {
     let index: Int
