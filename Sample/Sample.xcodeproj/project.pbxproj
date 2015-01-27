@@ -325,10 +325,7 @@
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = ../Carthage/Build/iOS;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -357,10 +354,7 @@
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cascade-ajruvawipqiudbdrpopohvkfarsv/Build/Products/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = ../Carthage/Build/iOS;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Sample/Resources/Other-Sources/Info.plist";
