@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F8482C451A2E6323008916A0 /* Cascade.h in Headers */ = {isa = PBXBuildFile; fileRef = F8482C441A2E62F9008916A0 /* Cascade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F87644561A77EA9B00DB9933 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87644551A77EA9A00DB9933 /* Runes.framework */; };
-		F88D10D41A77EE7D00088AB0 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F87644551A77EA9A00DB9933 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8910CF41A2E193F0062E5A0 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8910CF31A2E193F0062E5A0 /* Size.swift */; };
 		F8A0C31F1A1FB54B002C32C2 /* CascadeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0C31E1A1FB54B002C32C2 /* CascadeLayout.swift */; };
 		F8A0C3211A1FB59F002C32C2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0C3201A1FB59F002C32C2 /* Section.swift */; };
@@ -17,19 +16,6 @@
 		F8A0C3271A1FB71C002C32C2 /* CascadeLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0C3261A1FB71C002C32C2 /* CascadeLayoutDelegate.swift */; };
 		F8A273AC1A24E5B500A05BAF /* Flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A273AB1A24E5B500A05BAF /* Flatten.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F88D10D31A77EE7500088AB0 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F88D10D41A77EE7D00088AB0 /* Runes.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F8482C421A2E627D008916A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,7 +107,6 @@
 				F8FB72551A1F9654004265D5 /* Frameworks */,
 				F8FB72561A1F9654004265D5 /* Headers */,
 				F8FB72571A1F9654004265D5 /* Resources */,
-				F88D10D31A77EE7500088AB0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
