@@ -7,7 +7,7 @@ struct Column {
     let index: Int
     let frame: CGRect
     let width: CGFloat
-    let attributes = [UICollectionViewLayoutAttributes]()
+    let attributes: [UICollectionViewLayoutAttributes]
 
     var bottomEdge: CGFloat {
         return frame.maxY
@@ -16,6 +16,7 @@ struct Column {
     init(index: Int, width: CGFloat, minY: CGFloat) {
         self.index = index
         self.width = width
+        self.attributes = []
         self.frame = CGRect(x: CGFloat(index) * width,
             y: minY,
             width: width,
