@@ -11,10 +11,20 @@ public class CascadeLayout: UICollectionViewFlowLayout {
 
     override public func collectionViewContentSize() -> CGSize {
         let size = makeSize
-            <^> collectionView?.frame.width
+            <^> effectiveWidth
             <*> tallestSection(sections)?.bottomEdge
 
         return size ?? CGSizeZero
+    }
+
+    var effectiveWidth: CGFloat? {
+        return collectionView.map { $0.frame.width - $0.contentInset.left - $0.contentInset.right }
+    }
+
+    func columnWidthForSectionAtIndex(index: Int) -> CGFloat {
+        let numberOfColumns = columnCountForSectionAtIndex(index)
+        let containerWidth = effectiveWidth ?? 0
+        return (containerWidth - minimumLineSpacing * CGFloat(numberOfColumns - 1)) / CGFloat(numberOfColumns)
     }
 
     override public func prepareLayout() {
@@ -31,10 +41,11 @@ public class CascadeLayout: UICollectionViewFlowLayout {
     func columnsForSectionAtIndex(index: Int, numberOfItems: Int, previousSection: Section?) -> [Column] {
         let previousBottomEdge = previousSection?.bottomEdge ?? 0
         let numberOfColumns = columnCountForSectionAtIndex(index)
-        let containerWidth = collectionView?.frame.width ?? 0
+        let columnWidth = columnWidthForSectionAtIndex(index)
 
         let columns: [Column] = map(0..<numberOfColumns) { columnIndex in
-            return Column(index: columnIndex, width: containerWidth / CGFloat(numberOfColumns), minY: previousBottomEdge)
+            let minX = CGFloat(columnIndex) * (columnWidth + self.minimumLineSpacing)
+            return Column(index: columnIndex, width: columnWidth, minX: minX, minY: previousBottomEdge, spacing: self.minimumInteritemSpacing)
         }
 
         return reduce(0..<numberOfItems, columns) { columns, itemIndex in
@@ -43,7 +54,6 @@ public class CascadeLayout: UICollectionViewFlowLayout {
             let oldColumn = shortestColumn(columns)
             let newColumn = addItemToColumn <^> oldColumn <*> indexPath <*> itemSize
             return (replaceColumn(columns) <^> oldColumn <*> newColumn) ?? columns
-
         }
     }
 
