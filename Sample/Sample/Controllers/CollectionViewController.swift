@@ -6,6 +6,7 @@ class CollectionViewController: UICollectionViewController, CascadeLayoutDelegat
         super.viewDidLoad()
         let layout = collectionView?.collectionViewLayout as? CascadeLayout
         layout?.delegate = self
+        collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -13,7 +14,7 @@ class CollectionViewController: UICollectionViewController, CascadeLayoutDelegat
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("default", forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("default", forIndexPath: indexPath) as! UICollectionViewCell
         cell.backgroundColor = UIColor(red: random(255)/255, green: random(255)/255, blue: random(255)/255, alpha: 1)
         return cell;
     }

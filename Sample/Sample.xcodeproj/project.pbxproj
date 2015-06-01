@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00354E071B1CB0C7005B25B3 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00354E051B1CB0B8005B25B3 /* Runes.framework */; };
+		00354E081B1CB0C7005B25B3 /* Runes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00354E051B1CB0B8005B25B3 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		065D16558B3ED02CA4BBFB2C /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 665C3B639621458680370399 /* Main.storyboard */; };
 		1F46329F62C5DB39D1C6DAC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CA6D95218A5D0339C8B3B /* AppDelegate.swift */; };
 		3CCD569E5D33EAC01CA4C48E /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 526DC1A8C80B7295BE71CA48 /* LaunchScreen.xib */; };
@@ -40,6 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				00354E081B1CB0C7005B25B3 /* Runes.framework in Embed Frameworks */,
 				F80310AC1A2F88F800C2692B /* Cascade.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -48,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00354E051B1CB0B8005B25B3 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = ../Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 		2F623DD5160E0E64F77924D7 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		526DC1A8C80B7295BE71CA48 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		5D5CA6D95218A5D0339C8B3B /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00354E071B1CB0C7005B25B3 /* Runes.framework in Frameworks */,
 				F80310AB1A2F88F800C2692B /* Cascade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +199,7 @@
 		F8482C411A2E61C3008916A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00354E051B1CB0B8005B25B3 /* Runes.framework */,
 				F80310A51A2F88F300C2692B /* Cascade.xcodeproj */,
 			);
 			name = Frameworks;
