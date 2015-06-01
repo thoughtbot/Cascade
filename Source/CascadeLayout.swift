@@ -84,6 +84,12 @@ public class CascadeLayout: UICollectionViewFlowLayout {
         return flatten(attributes)
     }
 
+    override public func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
+        let itemAttributes = sections[indexPath.section].itemAttributes
+        let index = find(itemAttributes.map { $0.indexPath }, indexPath)
+        return index.map { itemAttributes[$0] } ?? UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+    }
+
     override public func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return collectionView?.bounds.width != .Some(newBounds.width)
     }
