@@ -8,19 +8,18 @@ struct Column {
     let frame: CGRect
     let width: CGFloat
     let attributes: [UICollectionViewLayoutAttributes]
+    let spacing: CGFloat
 
     var bottomEdge: CGFloat {
         return frame.maxY
     }
 
-    init(index: Int, width: CGFloat, minY: CGFloat) {
+    init(index: Int, width: CGFloat, minX: CGFloat, minY: CGFloat, spacing: CGFloat) {
         self.index = index
         self.width = width
         self.attributes = []
-        self.frame = CGRect(x: CGFloat(index) * width,
-            y: minY,
-            width: width,
-            height: 0)
+        self.frame = CGRect(x: minX, y: minY, width: width, height: 0)
+        self.spacing = spacing
     }
 }
 
@@ -30,12 +29,13 @@ extension Column {
         self.width = column.width
         self.frame = frame
         self.attributes = attributes
+        self.spacing = column.spacing
     }
 
     func addItemWithSize(itemSize: CGSize, atIndexPath indexPath: NSIndexPath) -> Column {
         let aspectRatio = itemSize.height / itemSize.width
         let itemRect = CGRect(x: frame.minX,
-            y: bottomEdge,
+            y: bottomEdge + spacing,
             width: floor(width),
             height: floor(width * aspectRatio))
 
