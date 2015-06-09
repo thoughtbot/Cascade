@@ -56,11 +56,11 @@ func ==(lhs: Column, rhs: Column) -> Bool {
 }
 
 func shortestColumn(columns: [Column]) -> Column? {
-    return sorted(columns) { $0.bottomEdge < $1.bottomEdge }.first
+    return columns.sort { $0.bottomEdge < $1.bottomEdge }.first
 }
 
 func tallestColumn(columns: [Column]) -> Column? {
-    return sorted(columns) { $0.bottomEdge > $1.bottomEdge }.first
+    return columns.sort { $0.bottomEdge > $1.bottomEdge }.first
 }
 
 func addItemToColumn(column: Column)(indexPath: NSIndexPath)(size: CGSize) -> Column {
@@ -68,6 +68,6 @@ func addItemToColumn(column: Column)(indexPath: NSIndexPath)(size: CGSize) -> Co
 }
 
 func replaceColumn(var columns: [Column])(oldColumn: Column)(newColumn: Column) -> [Column] {
-    columns.removeAtIndex <^> find(columns, oldColumn)
+    columns.removeAtIndex <^> columns.indexOf(oldColumn)
     return columns + [newColumn]
 }

@@ -30,7 +30,7 @@ public class CascadeLayout: UICollectionViewFlowLayout {
     override public func prepareLayout() {
         let numberOfSections = collectionView?.numberOfSections() ?? 0
 
-        sections = reduce(0..<numberOfSections, []) { sections, index in
+        sections = (0..<numberOfSections).reduce([]) { sections, index in
             let numberOfItems = self.collectionView?.numberOfItemsInSection(index) ?? 0
             let columns = self.columnsForSectionAtIndex(index, numberOfItems: numberOfItems, previousSection: sections.last)
             let section = Section(numberOfItems: numberOfItems, columns: columns)
@@ -43,12 +43,12 @@ public class CascadeLayout: UICollectionViewFlowLayout {
         let numberOfColumns = columnCountForSectionAtIndex(index)
         let columnWidth = columnWidthForSectionAtIndex(index)
 
-        let columns: [Column] = map(0..<numberOfColumns) { columnIndex in
+        let columns: [Column] = (0..<numberOfColumns).map { columnIndex in
             let minX = CGFloat(columnIndex) * (columnWidth + self.minimumLineSpacing)
             return Column(index: columnIndex, width: columnWidth, minX: minX, minY: previousBottomEdge, spacing: self.minimumInteritemSpacing)
         }
 
-        return reduce(0..<numberOfItems, columns) { columns, itemIndex in
+        return (0..<numberOfItems).reduce(columns) { columns, itemIndex in
             let indexPath = NSIndexPath(forItem: itemIndex, inSection: index)
             let itemSize = self.itemSizeAtIndexPath(indexPath)
             let oldColumn = shortestColumn(columns)
@@ -76,17 +76,17 @@ public class CascadeLayout: UICollectionViewFlowLayout {
         }
     }
 
-    override public func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
-        let attributes: [[UICollectionViewLayoutAttributes]] = map(sections) { section in
+    override public func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let attributes: [[UICollectionViewLayoutAttributes]] = sections.map { section in
             return section.itemAttributes.filter { item in rect.intersects(item.frame)}
         }
 
         return flatten(attributes)
     }
 
-    override public func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
+    override public func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
         let itemAttributes = sections[indexPath.section].itemAttributes
-        let index = find(itemAttributes.map { $0.indexPath }, indexPath)
+        let index = itemAttributes.map { $0.indexPath }.indexOf(indexPath)
         return index.map { itemAttributes[$0] } ?? UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
     }
 

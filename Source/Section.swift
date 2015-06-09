@@ -21,5 +21,5 @@ struct Section {
 }
 
 func tallestSection(sections: [Section]) -> Section? {
-    return sorted(sections) { $0.bottomEdge > $1.bottomEdge }.first
+    return sections.sort { $0.bottomEdge > $1.bottomEdge }.first
 }
